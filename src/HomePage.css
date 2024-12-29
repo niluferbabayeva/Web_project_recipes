@@ -1,0 +1,108 @@
+.home-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f7fc;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 2.5em;
+}
+
+.header p {
+  font-size: 1.2em;
+}
+
+.featured-recipes, .projects {
+  margin-bottom: 40px;
+}
+
+.featured-recipes h2, .projects h2 {
+  font-size: 1.8em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.recipes-list, .projects-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.recipe-card, .project-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  width: 250px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card h3, .project-card h3 {
+  font-size: 1.5em;
+}
+
+.recipe-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recipe-card li {
+  margin: 5px 0;
+}
+
+.explore-more-button {
+  position:relative;
+  display: inline-block; /* Ensure the button behaves like an inline element */
+  margin-top: 40px;
+  padding: 20px 37px;
+  font-size: 1.7rem;
+  background-color: #ff5722; /* Bright orange button */
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  justify-content: center;
+}
+
+.explore-more-button:hover {
+  background-color: #e64a19;
+  transform: translateY(-3px); /* Subtle hover effect */
+}
+
+.explore-more-button:active {
+  background-color: #d84315;
+  transform: translateY(1px); /* Slightly press effect */
+}
+
+.view-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.view-btn:hover {
+  background-color: #0056b3;
+}
+
+.project-card a {
+  display: block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}

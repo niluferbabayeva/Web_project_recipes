@@ -1,0 +1,48 @@
+{
+  "name": "recipe-manager-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "assert": "^2.1.0",
+    "axios": "^1.7.9",
+    "browserify-zlib": "^0.2.0",
+    "cra-template": "1.2.0",
+    "https-browserify": "^1.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.1.1",
+    "react-scripts": "5.0.1",
+    "recipe-manager-app": "file:",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "url": "^0.11.4",
+    "util": "^0.12.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "web-vitals": "^4.2.4"
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "recipes": [
+    {
+      "id": "3",
+      "title": "Chicken Caesar Salad",
+      "description": "A healthy and delicious chicken Caesar salad with crispy croutons.",
+      "imageUrl": "https://evergreenkitchen.ca/wp-content/uploads/2021/10/Vegan-Caesar-Salad-with-Shortcut-Roasted-Garlic-0-4X5-720x960.jpg",
+      "date": "2024-12-10",
+      "difficulty": "Easy",
+      "ingredients": [
+        "2 chicken breasts",
+        "4 cups romaine lettuce",
+        "1/2 cup Caesar dressing",
+        "1/2 cup croutons",
+        "1/4 cup grated Parmesan cheese",
+        "Salt and pepper to taste"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Vegetable Stir Fry rarara",
+      "description": "A vibrant mix of vegetables stir-fried in soy sauce, perfect with rice or noodles.",
+      "imageUrl": "https://elavegan.com/wp-content/uploads/2020/10/eating-vegetable-stir-fry-noodles-with-chopsticks.jpg",
+      "date": "2024-12-05",
+      "difficulty": "Hard",
+      "ingredients": [
+        "1 cup broccoli florets",
+        "1 carrot (sliced)",
+        "1 bell pepper (sliced)",
+        "1 zucchini (sliced)",
+        "2 tablespoons soy sauce",
+        "1 tablespoon olive oil",
+        "1 teaspoon sesame oil",
+        "1 teaspoon ginger (grated)",
+        "1 garlic clove (minced)"
+      ],
+      "lastEditedDate": "12/29/2024, 5:52:36 PM"
+    },
+    {
+      "id": "5",
+      "title": "Beef Tacos",
+      "description": "Delicious beef tacos with fresh toppings like guacamole, cheese, and salsa.",
+      "imageUrl": "https://elavegan.com/wp-content/uploads/2019/04/oven-baked-tacos-with-vegan-cheese-and-buffalo-rice-filling.jpg",
+      "date": "2024-12-01",
+      "difficulty": "Easy",
+      "ingredients": [
+        "500g ground beef",
+        "8 taco shells",
+        "1 onion (chopped)",
+        "1 packet taco seasoning",
+        "1 cup shredded cheddar cheese",
+        "1/2 cup salsa",
+        "1/2 cup sour cream",
+        "1 avocado (sliced)",
+        "Lettuce"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Grilled Chicken Breast",
+      "description": "A simple grilled chicken breast served with a side of vegetables.",
+      "imageUrl": "https://example.com/images/grilled-chicken.jpg",
+      "date": "2024-11-30",
+      "difficulty": "Medium",
+      "ingredients": [
+        "2 chicken breasts",
+        "1 tablespoon olive oil",
+        "1 tablespoon lemon juice",
+        "1 teaspoon paprika",
+        "1 teaspoon garlic powder",
+        "Salt and pepper to taste"
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Classic Margherita Pizza",
+      "description": "A simple yet delicious pizza with tomato, mozzarella, and basil.",
+      "imageUrl": "https://example.com/images/margherita-pizza.jpg",
+      "date": "2024-11-28",
+      "difficulty": "Medium",
+      "ingredients": [
+        "1 pizza dough",
+        "200g tomato sauce",
+        "200g mozzarella cheese",
+        "Fresh basil leaves",
+        "1 tablespoon olive oil",
+        "Salt to taste"
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Lemon Garlic Shrimp Pasta",
+      "description": "A flavorful pasta with shrimp in a zesty lemon garlic sauce.",
+      "imageUrl": "https://example.com/images/lemon-garlic-shrimp.jpg",
+      "date": "2024-11-20",
+      "difficulty": "Medium",
+      "ingredients": [
+        "200g spaghetti",
+        "300g shrimp (peeled and deveined)",
+        "3 cloves garlic (minced)",
+        "2 tablespoons olive oil",
+        "1 lemon (juiced)",
+        "1/4 cup fresh parsley",
+        "Salt and pepper to taste"
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Pumpkin Soup",
+      "description": "A smooth and creamy pumpkin soup, perfect for fall.",
+      "imageUrl": "https://example.com/images/pumpkin-soup.jpg",
+      "date": "2024-11-15",
+      "difficulty": "Easy",
+      "ingredients": [
+        "1 small pumpkin (peeled and chopped)",
+        "1 onion (chopped)",
+        "2 cloves garlic (minced)",
+        "3 cups vegetable broth",
+        "1/2 cup heavy cream",
+        "1 teaspoon cinnamon",
+        "Salt and pepper to taste"
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Eggplant Parmesan",
+      "description": "A hearty and comforting dish with breaded eggplant, marinara sauce, and mozzarella.",
+      "imageUrl": "https://example.com/images/eggplant-parmesan.jpg",
+      "date": "2024-11-10",
+      "difficulty": "Medium",
+      "ingredients": [
+        "2 eggplants (sliced)",
+        "2 cups marinara sauce",
+        "1 cup breadcrumbs",
+        "1 cup grated Parmesan cheese",
+        "2 cups shredded mozzarella cheese",
+        "1 egg (beaten)",
+        "Olive oil for frying",
+        "Salt and pepper to taste"
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Chicken Alfredo",
+      "description": "A creamy pasta dish with chicken, Alfredo sauce, and fettuccine.",
+      "imageUrl": "https://example.com/images/chicken-alfredo.jpg",
+      "date": "2024-11-05",
+      "difficulty": "Medium",
+      "ingredients": [
+        "200g fettuccine pasta",
+        "2 chicken breasts (cooked and sliced)",
+        "1 cup heavy cream",
+        "1/2 cup grated Parmesan cheese",
+        "2 cloves garlic (minced)",
+        "1 tablespoon olive oil",
+        "Salt and pepper to taste"
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Beef Stir Fry",
+      "description": "A quick and easy stir fry with tender beef and fresh vegetables.",
+      "imageUrl": "https://example.com/images/beef-stir-fry.jpg",
+      "date": "2024-10-30",
+      "difficulty": "Medium",
+      "ingredients": [
+        "500g beef (sliced)",
+        "1 bell pepper (sliced)",
+        "1 onion (sliced)",
+        "2 tablespoons soy sauce",
+        "1 tablespoon sesame oil",
+        "1 tablespoon ginger (grated)",
+        "2 cloves garlic (minced)",
+        "1 cup broccoli florets"
+      ]
+    },
+    {
+      "id": "13",
+      "title": "Avocado Toast",
+      "description": "A quick and healthy breakfast with avocado, lemon, and toast.",
+      "imageUrl": "https://example.com/images/avocado-toast.jpg",
+      "date": "2024-10-25",
+      "difficulty": "Easy",
+      "ingredients": [
+        "2 slices of bread",
+        "1 ripe avocado",
+        "1 tablespoon lemon juice",
+        "Salt and pepper to taste",
+        "Chili flakes (optional)"
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Grilled Salmon",
+      "description": "Tender salmon fillets grilled to perfection, served with lemon.",
+      "imageUrl": "https://example.com/images/grilled-salmon.jpg",
+      "date": "2024-10-20",
+      "difficulty": "Medium",
+      "ingredients": [
+        "2 salmon fillets",
+        "1 tablespoon olive oil",
+        "1 lemon (sliced)",
+        "Salt and pepper to taste",
+        "Fresh dill for garnish"
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Chocolate Chip Cookies",
+      "description": "Soft and chewy chocolate chip cookies, perfect for dessert.",
+      "imageUrl": "https://example.com/images/chocolate-chip-cookies.jpg",
+      "date": "2024-10-15",
+      "difficulty": "Easy",
+      "ingredients": [
+        "1 cup butter (softened)",
+        "1 cup brown sugar",
+        "2 cups all-purpose flour",
+        "1 teaspoon baking soda",
+        "2 cups chocolate chips",
+        "2 large eggs",
+        "1 teaspoon vanilla extract",
+        "1/2 teaspoon salt"
+      ]
+    }
+  ]
+}
