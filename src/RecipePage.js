@@ -24,6 +24,11 @@ const RecipePage = () => {
     return <div className="loading">Loading recipe...</div>;
   }
 
+  // Ensure ingredients is an array
+  const ingredients = typeof recipe.ingredients === 'string'
+    ? recipe.ingredients.split(',').map((ingredient) => ingredient.trim())
+    : recipe.ingredients;
+
   return (
     <div className="recipe-page">
       <div className="recipe-header">
@@ -35,7 +40,7 @@ const RecipePage = () => {
       <section className="recipe-section">
         <h2>Ingredients</h2>
         <ul className="recipe-ingredients">
-          {recipe.ingredients.map((ingredient, index) => (
+          {ingredients.map((ingredient, index) => (
             <li key={index}>{ingredient}</li>
           ))}
         </ul>

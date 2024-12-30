@@ -19,6 +19,7 @@ function App() {
         {/* Single Recipe Page */}
         <Route path="/recipes/:id" element={<RecipePage />} />
         <Route path="/recipes/edit/:id" element={<EditRecipe />} />
+        <Route path="/create" element={<EditRecipe />} />
 
         {/* Fallback Route (404 Page) */}
         {/* <Route path="*" element={<NotFoundPage />} /> */}

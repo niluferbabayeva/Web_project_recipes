@@ -49,6 +49,7 @@ const RecipeListPage = () => {
   return (
     <div className="recipe-list-page">
       <div className="controls">
+      
         <input
           type="text"
           placeholder="Search recipes..."
@@ -73,6 +74,7 @@ const RecipeListPage = () => {
           <option value="date">Last Updated</option>
           <option value="difficulty">Difficulty</option>
         </select>
+        <button onClick={() => navigate('/create')}>Create Recipe</button>
       </div>
 
       <div className="recipes-container">
