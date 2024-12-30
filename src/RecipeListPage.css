@@ -5,14 +5,62 @@
 
 .controls {
   display: flex;
-  gap: 20px;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute items evenly */
+  gap: 5px; /* Gap between controls for neatness */
+  margin-bottom: 2rem;
 }
 
-.controls input,
-.controls select {
-  padding: 10px;
-  font-size: 1rem;
+/* Individual Filter Inputs */
+.controls input, 
+.controls select, 
+.controls button {
+  padding: 12px 18px; /* Increased padding for balance */
+  font-size: 1.1rem; /* Font size in line with overall text */
+  border-radius: 8px; /* Rounded corners */
+  border: 1px solid #ccc; /* Subtle border color */
+  background-color: #fff; /* Clean white background */
+  color: #333;
+  width: calc(25% - 5px); /* Three inputs, each taking equal width */
+  box-sizing: border-box; /* Ensures padding does not break the layout */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Filter Inputs - Hover Effect */
+.controls input:hover, 
+.controls select:hover, 
+.controls button:hover {
+  border-color: #ff5722; /* Border color on hover */
+  box-shadow: 0 0 8px rgba(255, 87, 34, 0.3); /* Soft shadow effect */
+}
+
+/* Button Style - Adjusted to fit nicely */
+.controls button {
+  background-color: #ff5722; /* Primary action color */
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: auto; /* Auto width to fit the content */
+  flex-shrink: 0; /* Prevent button from shrinking */
+  margin-left: auto; /* Align to the right */
+  padding: 12px 24px; /* Larger padding */
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+
+/* Responsive Adjustment for Mobile */
+@media screen and (max-width: 768px) {
+  .controls input, 
+  .controls select, 
+  .controls button {
+    width: 100%; /* Full-width on small screens */
+    margin-bottom: 15px; /* Spacing between inputs */
+  }
+  
+  .controls button {
+    width: auto; /* Make button adjust based on text */
+    margin-top: 10px; /* Spacing from the inputs */
+  }
 }
 
 .recipes-container {
