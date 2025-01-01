@@ -1,25 +1,20 @@
-// src/data/projectsData.js
-export const projectsData = [
-    {
-      title: "Expense Management Web App",
-      description: "A web app for managing your daily expenses and keeping track of your budget.",
-      link: "https://github.com/RahimaKarimova/appsplit-webapp-for-expense-management-"
-    },
-    {
-      title: "Recipe Manager App",
-      description: "A web app to manage and share your favorite recipes.",
-      link: "https://github.com/username/recipe-manager"
-    },
-    {
-      title: "Mobile Web App",
-      description: "A responsive web app for mobile devices.",
-      link: "https://github.com/username/mobile-web-app"
-    },
-    {
-      title: "E-Commerce Website",
-      description: "A full-fledged e-commerce website with a shopping cart and checkout process.",
-      link: "https://github.com/username/e-commerce-website"
-    }
-    // Add more projects as needed
-  ];
-  
+// src/projectData.js
+export const profilesData = [
+  {
+    name: 'Nilufar Babayeva',
+    description: 'GitHub profile of the Contributor:',
+    link: 'https://github.com/niluferbabayeva',
+  },
+  {
+    name: 'Rahima Karimova',
+    description: 'Github profile of the Contributor:',
+    link: 'https://github.com/RahimaKarimova',
+  },
+  {
+    name: 'Emil Hajiyev',
+    description: 'Github profile of the Contributor:',
+    link: 'https://github.com/EmilHajiyevWeb',
+  },
+];
+
+

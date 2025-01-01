@@ -5,6 +5,8 @@ import FeaturedRecipe from '../components/FeaturedRecipe'; // Adjusted path to F
 import ProjectCard from '../components/ProjectCard'; // Adjusted path to ProjectCard.jsx
 import './style/HomePage.css';
 import Header from '../components/Header'; // Adjusted path to Header.jsx
+import { profilesData } from '../projectData';
+
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
@@ -29,25 +31,6 @@ const HomePage = () => {
     // Filter out the deleted recipe from the state
     setRecipes((prevRecipes) => prevRecipes.filter(recipe => recipe.id !== id));
   };
-
-  // Define profile data
-  const profilesData = [
-    {
-      name: 'Nilufar Babayeva',
-      description: 'GitHub profile of the Contributor.',
-      link: 'https://github.com/niluferbabayeva',
-    },
-    {
-      name: 'Rahima Karimova',
-      description: 'Github profile of the Contributor.',
-      link: 'https://github.com/RahimaKarimova',
-    },
-    {
-      name: 'Emil Hajiyev',
-      description: 'Github profile of the Contributor.',
-      link: 'https://github.com/EmilHajiyevWeb',
-    },
-  ];
 
   return (
     <div className="home-page">
@@ -90,4 +73,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
