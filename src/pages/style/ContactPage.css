@@ -1,0 +1,139 @@
+.contact-page {
+    padding: 50px 20px;
+    background: url('https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?cs=srgb&dl=pexels-enginakyurt-1435895.jpg&fm=jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .contact-page h2 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #f8f8f8;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+    text-align: center;
+  }
+  
+  .contact-form {
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    background: #f9f9f9;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #ff5722;
+    box-shadow: 0 0 8px rgba(255, 87, 34, 0.4);
+    background: #fff;
+  }
+  
+  .form-group textarea {
+    resize: none;
+    height: 150px;
+  }
+  
+  .submit-button {
+    align-self: center;
+    padding: 15px 40px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #ff5722, #ff8a50);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 87, 34, 0.3);
+    text-transform: uppercase;
+  }
+  
+  .submit-button:hover {
+    background: linear-gradient(90deg, #e64a19, #ff7043);
+    transform: translateY(-3px);
+  }
+  
+  .submit-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.4);
+  }
+  
+  .response-message {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fff; /* White color for success */
+    background: linear-gradient(90deg, #ff5722, #ff8a50); /* Same gradient as the button */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 20px auto; /* Center the message horizontally */
+    animation: fadeIn 0.5s ease-in-out; /* Smooth fade-in effect */
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contact-page h2 {
+      font-size: 2.5rem;
+    }
+  
+    .contact-form {
+      padding: 20px;
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      font-size: 1rem;
+    }
+  
+    .submit-button {
+      font-size: 1.2rem;
+    }
+  }
+  
+  

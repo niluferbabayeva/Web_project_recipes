@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // For navigation to Contact Page
 import './style/Header.css'; // For the header-specific styles
 
 const Header = () => {
@@ -17,9 +18,14 @@ const Header = () => {
           <p className="header-description">
             Manage, explore, and share your favorite recipes with ease. Our app allows you to create, view, edit, delete, and organize recipes in one place!
           </p>
-          <button className="get-started-button" onClick={scrollToFeaturedRecipes}>
-            Get Started
-          </button>
+          <div className="header-buttons">
+            <button className="get-started-button" onClick={scrollToFeaturedRecipes}>
+              Get Started
+            </button>
+            <Link to="/contact" className="contact-button">
+              Contact Us
+            </Link>
+          </div>
         </div>
       </div>
     </header>
@@ -27,3 +33,4 @@ const Header = () => {
 };
 
 export default Header;
+

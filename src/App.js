@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage';
 import RecipePage from './pages/RecipePage';
 import RecipeListPage from './pages/RecipeListPage'; // For full list of recipes
 import EditRecipe from './pages/EditRecipe';
-// import NotFoundPage from './NotFoundPage'; // Optional 404 page
+import ContactPage from './pages/ContactPage'; // Import the ContactPage component
 
 function App() {
   return (
@@ -21,11 +21,17 @@ function App() {
         <Route path="/recipes/edit/:id" element={<EditRecipe />} />
         <Route path="/create" element={<EditRecipe />} />
 
+        {/* Contact Page */}
+        <Route path="/contact" element={<ContactPage />} />
+
         {/* Fallback Route (404 Page) */}
-        {/* <Route path="*" element={<NotFoundPage />} /> */}
+        <Route path="*" element={<div>404 - Page Not Found</div>} /> {/* Optional */}
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
+
+

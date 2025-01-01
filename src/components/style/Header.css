@@ -28,7 +28,7 @@
   font-size: 3.5rem;
   margin-bottom: 20px;
   font-weight: bold;
-  color:#f1f1f1;
+  color: #f1f1f1;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
@@ -40,8 +40,14 @@
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-.get-started-button {
+.header-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
   margin-top: 40px;
+}
+
+.get-started-button {
   padding: 15px 40px;
   font-size: 1.5rem;
   font-weight: bold;
@@ -63,6 +69,30 @@
   box-shadow: 0 4px 12px rgba(255, 87, 34, 0.4);
 }
 
+.contact-button {
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #ff5722, #ff8a50); /* Same gradient as Get Started */
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration: none; /* Ensure it looks like a button */
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-button:hover {
+  background: linear-gradient(90deg, #e64a19, #ff7043); /* Same hover gradient */
+  transform: translateY(-3px);
+}
+
+.contact-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.4); /* Same shadow as Get Started */
+}
+
+
 @media (max-width: 768px) {
   .header-title {
     font-size: 2.5rem;
@@ -73,9 +103,15 @@
     margin-bottom: 20px;
   }
 
-  .get-started-button {
+  .get-started-button,
+  .contact-button {
     font-size: 1rem;
     padding: 12px 25px;
+  }
+
+  .header-buttons {
+    flex-direction: column;
+    gap: 15px;
   }
 }
 
