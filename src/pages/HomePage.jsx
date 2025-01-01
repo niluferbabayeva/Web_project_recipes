@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import FeaturedRecipe from '../components/FeaturedRecipe';
-import ProjectCard from '../components/ProjectCard';
-import { projectsData } from '../projectData';
+import FeaturedRecipe from '../components/FeaturedRecipe'; // Adjusted path to FeaturedRecipe.jsx
+import ProjectCard from '../components/ProjectCard'; // Adjusted path to ProjectCard.jsx
 import './style/HomePage.css';
-import Header from '../components/Header';
+import Header from '../components/Header'; // Adjusted path to Header.jsx
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
@@ -26,11 +25,29 @@ const HomePage = () => {
       });
   }, []);
 
-  // Handle the deletion of a recipe
   const handleDelete = (id) => {
     // Filter out the deleted recipe from the state
     setRecipes((prevRecipes) => prevRecipes.filter(recipe => recipe.id !== id));
   };
+
+  // Define profile data
+  const profilesData = [
+    {
+      name: 'Nilufar Babayeva',
+      description: 'GitHub profile of the Contributor.',
+      link: 'https://github.com/niluferbabayeva',
+    },
+    {
+      name: 'Rahima Karimova',
+      description: 'Github profile of the Contributor.',
+      link: 'https://github.com/RahimaKarimova',
+    },
+    {
+      name: 'Emil Hajiyev',
+      description: 'Github profile of the Contributor.',
+      link: 'https://github.com/EmilHajiyevWeb',
+    },
+  ];
 
   return (
     <div className="home-page">
@@ -56,12 +73,15 @@ const HomePage = () => {
         </button>
       </section>
 
-      {/* Past Projects Section */}
-      <section className="projects">
-        <h2>Past Projects</h2>
-        <div className="projects-list">
-          {projectsData.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+      {/* Profiles Section */}
+      <section className="profiles">
+        <h2>Profiles of the Contributors</h2>
+        <div className="profiles-list">
+          {profilesData.map((profile, index) => (
+            <ProjectCard 
+              key={index} 
+              project={profile} 
+            />
           ))}
         </div>
       </section>
@@ -70,3 +90,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+

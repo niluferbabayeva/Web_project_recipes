@@ -76,20 +76,20 @@ body {
   background-color: #c62828;
 }
 
-/* Projects Section */
-.projects {
+/* Profiles Section */
+.profiles {
   background-color: #fff;
   padding: 40px 20px;
 }
 
-.projects h2 {
+.profiles h2 {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 20px;
   color: #333;
 }
 
-.projects-list {
+.profiles-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -157,7 +157,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .recipes-list,
-  .projects-list {
+  .profiles-list {
     flex-direction: column;
     gap: 15px;
   }
