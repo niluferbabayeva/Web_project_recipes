@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './HomePage';
-import RecipePage from './RecipePage';
-import RecipeListPage from './RecipeListPage'; // For full list of recipes
-import EditRecipe from './EditRecipe';
+import HomePage from './pages/HomePage';
+import RecipePage from './pages/RecipePage';
+import RecipeListPage from './pages/RecipeListPage'; // For full list of recipes
+import EditRecipe from './pages/EditRecipe';
 // import NotFoundPage from './NotFoundPage'; // Optional 404 page
 
 function App() {

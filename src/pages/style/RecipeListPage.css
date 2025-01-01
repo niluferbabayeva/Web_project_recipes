@@ -1,0 +1,125 @@
+.recipe-list-page {
+  padding: 20px;
+  background-color: #f4f7fc;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute items evenly */
+  gap: 5px; /* Gap between controls for neatness */
+  margin-bottom: 2rem;
+}
+
+/* Individual Filter Inputs */
+.controls input, 
+.controls select, 
+.controls button {
+  padding: 12px 18px; /* Increased padding for balance */
+  font-size: 1.1rem; /* Font size in line with overall text */
+  border-radius: 8px; /* Rounded corners */
+  border: 1px solid #ccc; /* Subtle border color */
+  background-color: #fff; /* Clean white background */
+  color: #333;
+  width: calc(25% - 5px); /* Three inputs, each taking equal width */
+  box-sizing: border-box; /* Ensures padding does not break the layout */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Filter Inputs - Hover Effect */
+.controls input:hover, 
+.controls select:hover, 
+.controls button:hover {
+  border-color: #ff5722; /* Border color on hover */
+  box-shadow: 0 0 8px rgba(255, 87, 34, 0.3); /* Soft shadow effect */
+}
+
+/* Button Style - Adjusted to fit nicely */
+.controls button {
+  background-color: #ff5722; /* Primary action color */
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: auto; /* Auto width to fit the content */
+  flex-shrink: 0; /* Prevent button from shrinking */
+  margin-left: auto; /* Align to the right */
+  padding: 12px 24px; /* Larger padding */
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+
+/* Responsive Adjustment for Mobile */
+@media screen and (max-width: 768px) {
+  .controls input, 
+  .controls select, 
+  .controls button {
+    width: 100%; /* Full-width on small screens */
+    margin-bottom: 15px; /* Spacing between inputs */
+  }
+  
+  .controls button {
+    width: auto; /* Make button adjust based on text */
+    margin-top: 10px; /* Spacing from the inputs */
+  }
+}
+
+.recipes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.recipe-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  width: 250px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card h3 {
+  font-size: 1.5em;
+}
+
+.recipe-card p {
+  font-size: 1.1em;
+}
+
+.recipe-card button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.recipe-card button:hover {
+  background-color: #e64a19;
+}
+
+.recipe-card input,
+.recipe-card textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.recipe-card input[type="text"],
+.recipe-card textarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.recipe-card button {
+  width: 48%;
+}
+
+.recipe-card button + button {
+  margin-left: 4%;
+}

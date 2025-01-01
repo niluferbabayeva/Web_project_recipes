@@ -1,0 +1,139 @@
+/* Recipe Page - Modern Enhanced CSS */
+.recipe-page {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(to bottom right, #ffffff, #f3f4f6);
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.recipe-page:hover {
+  transform: scale(1.02);
+}
+
+.recipe-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.recipe-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.recipe-image:hover {
+  transform: scale(1.03);
+}
+
+.recipe-title {
+  font-size: 2.8rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-description {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.recipe-section {
+  margin-bottom: 30px;
+}
+
+.recipe-section h2 {
+  font-size: 1.5rem;
+  color: #34495e;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  border-left: 5px solid #ff5722;
+  padding-left: 10px;
+  letter-spacing: 1px;
+}
+
+.recipe-ingredients,
+.recipe-steps {
+  margin-left: 20px;
+  font-size: 1.1rem;
+  color: #34495e;
+}
+
+.recipe-steps {
+  list-style-type: decimal;
+}
+
+.recipe-ingredients li,
+.recipe-steps li {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.recipe-ingredients li:hover,
+.recipe-steps li:hover {
+  background: #ffedd5;
+  color: #d35400;
+}
+
+.recipe-section p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 8px;
+}
+
+.back-button {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  background: #ff5722;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:hover {
+  background: #e64a19;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .recipe-title {
+      font-size: 2rem;
+  }
+
+  .recipe-description {
+      font-size: 1rem;
+  }
+
+  .recipe-section h2 {
+      font-size: 1.6rem;
+  }
+
+  .back-button {
+      font-size: 1rem;
+      padding: 10px 20px;
+  }
+}
