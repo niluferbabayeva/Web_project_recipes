@@ -3,7 +3,7 @@ import axios from "axios";
 import emailjs from "emailjs-com";
 import FeaturedRecipe from "../components/FeaturedRecipe";
 import { useNavigate } from "react-router-dom";
-import CreatableSelect from "react-select/creatable"; // Import CreatableSelect for dynamic tags
+import CreatableSelect from "react-select/creatable";
 import "./style/RecipeListPage.css";
 
 const RecipeListPage = () => {
@@ -12,34 +12,35 @@ const RecipeListPage = () => {
   const [filterTag, setFilterTag] = useState([]);
   const [difficulty, setDifficulty] = useState("");
   const [sortOption, setSortOption] = useState("");
-  const [allTags, setAllTags] = useState([]); // Store all unique tags here
-  const [selectedRecipes, setSelectedRecipes] = useState([]); // Track selected recipes
-  const [userEmail, setUserEmail] = useState(""); // Track user email
+  const [allTags, setAllTags] = useState([]);
+  const [selectedRecipes, setSelectedRecipes] = useState([]);
+  const [userEmail, setUserEmail] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [recipesPerPage] = useState(10);
+  const [paginationMode, setPaginationMode] = useState(true); // Toggle for pagination/infinite scrolling
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch all recipes
-    axios
-      .get("http://localhost:3000/recipes")
-      .then((response) => {
+    const fetchRecipes = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/recipes");
         setRecipes(response.data);
 
-        // Extract unique tags from recipes and set them
         const uniqueTags = new Set();
         response.data.forEach((recipe) => {
           recipe.tags?.forEach((tag) => uniqueTags.add(tag));
         });
-        // Set the tags in the form of { value: tag, label: tag }
         setAllTags(
           Array.from(uniqueTags).map((tag) => ({
             value: tag,
             label: tag,
           }))
         );
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Error fetching recipes:", error);
-      });
+      }
+    };
+    fetchRecipes();
   }, []);
 
   const handleDelete = (id) => {
@@ -72,10 +73,10 @@ const RecipeListPage = () => {
 
     emailjs
       .send(
-        "service_v52xam9", //service ID
-        "template_u43zt9n", //template ID
+        "service_v52xam9",
+        "template_u43zt9n",
         emailParams,
-        "AIAe-bsHafs6zrey3" // Replace with your EmailJS user ID
+        "AIAe-bsHafs6zrey3"
       )
       .then(
         (result) => {
@@ -103,28 +104,62 @@ const RecipeListPage = () => {
       );
     })
     .filter((recipe) => {
-      // If any filter tag is selected, check if the recipe has that tag
       if (filterTag.length > 0) {
         return filterTag.every((tag) => recipe.tags?.includes(tag.value));
       }
       return true;
     })
     .filter((recipe) => {
-      // Filter by difficulty (case-insensitive)
       return difficulty ? recipe.difficulty.toLowerCase() === difficulty.toLowerCase() : true;
     })
     .sort((a, b) => {
-      // Sort based on selected sort option
       if (sortOption === "title") return a.title.localeCompare(b.title);
       if (sortOption === "date") return new Date(b.date) - new Date(a.date);
       if (sortOption === "difficulty") return a.difficulty.localeCompare(b.difficulty);
       return 0;
     });
 
+  const totalPages = Math.ceil(filteredRecipes.length / recipesPerPage);
+  const startPage = Math.max(1, currentPage - 2);
+  const endPage = Math.min(totalPages, currentPage + 2);
+
+  const displayedRecipes = paginationMode
+    ? filteredRecipes.slice(
+        (currentPage - 1) * recipesPerPage,
+        currentPage * recipesPerPage
+      )
+    : filteredRecipes.slice(0, currentPage * recipesPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <div className="recipe-list-page">
+      <div className="toggle-mode">
+        <label>
+          <input
+            type="radio"
+            name="mode"
+            value="pagination"
+            checked={paginationMode}
+            onChange={() => setPaginationMode(true)}
+          />
+          Pagination
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="mode"
+            value="infinite-scrolling"
+            checked={!paginationMode}
+            onChange={() => setPaginationMode(false)}
+          />
+          Infinite Scrolling
+        </label>
+      </div>
+
       <div className="controls">
-        {/* Search Bar */}
         <input
           type="text"
           placeholder="Search recipes..."
@@ -132,7 +167,6 @@ const RecipeListPage = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
         />
 
-        {/* Filter by Tags using CreatableSelect */}
         <div>
           <strong>Filter by Tags:</strong>
           <CreatableSelect
@@ -145,7 +179,6 @@ const RecipeListPage = () => {
           />
         </div>
 
-        {/* Difficulty Filter */}
         <select onChange={(e) => setDifficulty(e.target.value)} value={difficulty}>
           <option value="">All Difficulty Levels</option>
           <option value="Easy">Easy</option>
@@ -153,7 +186,6 @@ const RecipeListPage = () => {
           <option value="Hard">Hard</option>
         </select>
 
-        {/* Sort Options */}
         <select onChange={(e) => setSortOption(e.target.value)} value={sortOption}>
           <option value="">Sort By</option>
           <option value="title">Title</option>
@@ -161,11 +193,9 @@ const RecipeListPage = () => {
           <option value="difficulty">Difficulty</option>
         </select>
 
-        {/* Create Recipe Button */}
         <button onClick={() => navigate("/create")}>Create Recipe</button>
       </div>
 
-      {/* Email Input and Share Button */}
       <div className="share-section">
         <input
           type="email"
@@ -177,9 +207,8 @@ const RecipeListPage = () => {
         <button onClick={shareRecipes}>Share Selected Recipes</button>
       </div>
 
-      {/* Recipes List */}
       <div className="recipes-container">
-        {filteredRecipes.map((recipe) => (
+        {displayedRecipes.map((recipe) => (
           <div key={recipe.id} className="recipe-card">
             <input
               type="checkbox"
@@ -189,6 +218,35 @@ const RecipeListPage = () => {
           </div>
         ))}
       </div>
+
+      {paginationMode && (
+        <div className="pagination">
+          <button
+            onClick={() => handlePageChange(1)}
+            disabled={currentPage === 1}
+          >
+            &laquo; First
+          </button>
+          {Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map(
+            (pageNumber) => (
+              <button
+                key={pageNumber}
+                onClick={() => handlePageChange(pageNumber)}
+                className={currentPage === pageNumber ? "active" : ""}
+              >
+                {pageNumber}
+              </button>
+            )
+          )}
+          <button
+            onClick={() => handlePageChange(totalPages)}
+            disabled={currentPage === totalPages}
+          >
+            Last &raquo;
+          </button>
+        </div>
+      )}
+      {!paginationMode && <p>Loading more recipes...</p>}
     </div>
   );
 };
