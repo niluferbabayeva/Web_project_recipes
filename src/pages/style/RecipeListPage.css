@@ -64,9 +64,10 @@
 }
 
 .recipes-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  min-height: 200px; /* Ensure the container is always visible */
+  background-color: #f9f9f9;
+  border: 1px dashed #ccc;
+  padding: 10px
 }
 
 .recipe-card {
@@ -122,4 +123,40 @@
 
 .recipe-card button + button {
   margin-left: 4%;
+}
+
+.email-input {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.email-input:focus {
+    border-color: #ff5722;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 87, 34, 0.3);
+}
+
+.share-section {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.share-section button {
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.share-section button:hover {
+    background-color: #e64a19;
 }
