@@ -3,6 +3,7 @@
   background-color: #f4f7fc;
 }
 
+/* The row with search, filters, sort, etc. */
 .controls {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -11,7 +12,6 @@
   align-items: center;
 }
 
-/* Individual Filter Inputs */
 .controls input,
 .controls select,
 .controls button {
@@ -28,15 +28,13 @@
   box-shadow: 0 0 5px rgba(255, 87, 34, 0.4);
 }
 
-/* Filter Inputs - Hover Effect */
-.controls input:hover, 
-.controls select:hover, 
+.controls input:hover,
+.controls select:hover,
 .controls button:hover {
-  border-color: #ff5722; /* Border color on hover */
-  box-shadow: 0 0 8px rgba(255, 87, 34, 0.3); /* Soft shadow effect */
+  border-color: #ff5722;
+  box-shadow: 0 0 8px rgba(255, 87, 34, 0.3);
 }
 
-/* Button Style - Adjusted to fit nicely */
 .controls button {
   background-color: #ff5722;
   color: white;
@@ -44,40 +42,68 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+.controls button:hover {
+  background-color: #e64a19;
+}
 
-/* Responsive Adjustment for Mobile */
 @media screen and (max-width: 768px) {
-  .controls input, 
-  .controls select, 
+  .controls input,
+  .controls select,
   .controls button {
-    width: 100%; /* Full-width on small screens */
-    margin-bottom: 15px; /* Spacing between inputs */
+    width: 100%;
+    margin-bottom: 15px;
   }
-  
   .controls button {
-    width: auto; /* Make button adjust based on text */
-    margin-top: 10px; /* Spacing from the inputs */
+    width: auto;
+    margin-top: 10px;
   }
 }
 
+/* Make a grid with 3 columns on larger screens */
+.recipe-list-page {
+  padding: 20px;
+  background-color: #f4f7fc;
+}
+
+/* Toggle controls at top */
+.toggle-mode {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.toggle-mode label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+.toggle-mode input[type="radio"] {
+  margin-right: 8px;
+}
+
+
+/* Recipes Container: Single Column for DnD */
 .recipes-container {
-  min-height: 200px; /* Ensure the container is always visible */
-  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column; 
+  gap: 15px;
+  background-color: #fff;
   border: 1px dashed #ccc;
-  padding: 10px
+  padding: 15px;
+  min-height: 50px; 
 }
 
+/* Each Draggable Card */
 .recipe-card {
+  background-color: #ffffff;
   border: 1px solid #ddd;
   padding: 15px;
-  width: 250px;
-  text-align: center;
   border-radius: 8px;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.recipe-card h3 {
+.recipe-card h3 { 
   font-size: 1.5em;
 }
 
@@ -85,57 +111,20 @@
   font-size: 1.1em;
 }
 
-.recipe-card button {
-  margin-top: 10px;
-  padding: 10px 15px;
-  font-size: 1.2rem;
-  background-color: #ff5722;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.recipe-card button:hover {
-  background-color: #e64a19;
-}
-
-.recipe-card input,
-.recipe-card textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.recipe-card input[type="text"],
-.recipe-card textarea {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.recipe-card button {
-  width: 48%;
-}
-
-.recipe-card button + button {
-  margin-left: 4%;
-}
-
 .email-input {
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 1rem;
-    width: 100%;
-    max-width: 400px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .email-input:focus {
-    border-color: #ff5722;
-    outline: none;
-    box-shadow: 0 0 5px rgba(255, 87, 34, 0.3);
+  border-color: #ff5722;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 87, 34, 0.3);
 }
 
 .share-section {
@@ -156,12 +145,42 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
 .share-section button:hover {
-    background-color: #e64a19;
+  background-color: #e64a19;
 }
 
-/* Pagination Styles */
+/* Toggle (pagination vs infinite) */
+.toggle-mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.toggle-mode label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.toggle-mode input[type="radio"] {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.toggle-mode label:hover {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.toggle-mode input[type="radio"]:checked + label {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Pagination buttons */
 .pagination {
   display: flex;
   justify-content: center;
@@ -197,36 +216,4 @@
   color: #fff;
   font-weight: bold;
   cursor: default;
-}
-
-/* Toggle Styles */
-.toggle-mode {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  gap: 20px;
-}
-
-.toggle-mode label {
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.toggle-mode input[type="radio"] {
-  margin-right: 8px;
-  cursor: pointer;
-}
-
-/* Hover and Active State for Toggle */
-.toggle-mode label:hover {
-  color: #007bff;
-  font-weight: bold;
-}
-
-.toggle-mode input[type="radio"]:checked + label {
-  color: #007bff;
-  font-weight: bold;
 }

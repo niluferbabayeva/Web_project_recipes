@@ -1,24 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
-import CreatableSelect from 'react-select/creatable'; // Import CreatableSelect component
+import CreatableSelect from 'react-select/creatable';
 import './style/EditRecipe.css';
 
 const EditRecipe = () => {
-  const { id } = useParams(); // Get the recipe ID from the URL params
-  const navigate = useNavigate(); // Used to navigate back to the main page after saving
-  const isEditing = !!id; // Determine if we are editing or creating
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const isEditing = !!id;
+
+  // If you want separate date fields, e.g. createdAt vs updatedAt:
+  // But for simplicity, we'll keep using "date" as in your code
   const [recipe, setRecipe] = useState({
     title: '',
     description: '',
     imageUrl: '',
-    ingredients: [], // ingredients is initially an array
+    ingredients: [],
     difficulty: 'Easy',
     tags: [],
     date: new Date().toLocaleString(),
+    steps: [],
   });
 
-  // Predefined tags for the dropdown
+  // Predefined tags
   const predefinedTags = [
     { value: 'Dessert', label: 'Dessert' },
     { value: 'Vegetarian', label: 'Vegetarian' },
@@ -32,33 +36,25 @@ const EditRecipe = () => {
     { value: 'High-Protein', label: 'High-Protein' },
   ];
 
-  const [tags, setTags] = useState(predefinedTags); // Existing tags list
-  const [selectedTags, setSelectedTags] = useState([]); // User-selected tags
+  const [tags, setTags] = useState(predefinedTags);
+  const [selectedTags, setSelectedTags] = useState([]);
 
   useEffect(() => {
     if (isEditing) {
-      // Fetch the recipe details by ID only if we are editing
-      axios
-        .get(`http://localhost:3000/recipes/${id}`)
-        .then((response) => {
-          setRecipe(response.data);
-          // Prepopulate selected tags
+      axios.get(`http://localhost:3000/recipes/${id}`)
+        .then((res) => {
+          setRecipe(res.data);
           setSelectedTags(
-            response.data.tags?.map((tag) => ({ value: tag, label: tag })) || []
+            res.data.tags?.map((tag) => ({ value: tag, label: tag })) || []
           );
         })
-        .catch((error) => {
-          console.error('Error fetching recipe data:', error);
-        });
+        .catch((error) => console.error('Error fetching recipe:', error));
     }
   }, [id, isEditing]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setRecipe((prevRecipe) => ({
-      ...prevRecipe,
-      [name]: value,
-    }));
+    setRecipe((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleTagsChange = (selectedOptions) => {
@@ -67,50 +63,37 @@ const EditRecipe = () => {
 
   const handleCreateTag = (inputValue) => {
     const newTag = { value: inputValue, label: inputValue };
-    setTags((prevTags) => [...prevTags, newTag]);
-    setSelectedTags((prevSelected) => [...prevSelected, newTag]);
+    setTags((prev) => [...prev, newTag]);
+    setSelectedTags((prev) => [...prev, newTag]);
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     const updatedRecipe = {
       ...recipe,
-      // Ensure ingredients are always an array before saving
       ingredients: Array.isArray(recipe.ingredients)
-        ? recipe.ingredients.join(', ') // Convert array to string for storage
-        : recipe.ingredients, // If it's already a string, keep it
-      tags: selectedTags.map((tag) => tag.value), // Save tags as plain values
-      date: new Date().toLocaleString(), // Update last edited/created date
+        ? recipe.ingredients.join(', ')
+        : recipe.ingredients,
+      tags: selectedTags.map((tag) => tag.value),
+      date: new Date().toLocaleString(),
     };
 
-    if (isEditing) {
-      // Update existing recipe
-      axios
-        .put(`http://localhost:3000/recipes/${id}`, updatedRecipe)
-        .then(() => {
-          alert('Recipe updated successfully!');
-          navigate('/'); // Redirect to the main page after saving
-        })
-        .catch((error) => {
-          console.error('Error updating recipe:', error);
-        });
-    } else {
-      // Create a new recipe
-      axios
-        .post(`http://localhost:3000/recipes`, updatedRecipe)
-        .then(() => {
-          alert('Recipe created successfully!');
-          navigate('/'); // Redirect to the main page after saving
-        })
-        .catch((error) => {
-          console.error('Error creating recipe:', error);
-        });
+    try {
+      if (isEditing) {
+        await axios.put(`http://localhost:3000/recipes/${id}`, updatedRecipe);
+        alert('Recipe updated successfully!');
+      } else {
+        await axios.post('http://localhost:3000/recipes', updatedRecipe);
+        alert('Recipe created successfully!');
+      }
+      navigate('/');
+    } catch (error) {
+      console.error('Error saving recipe:', error);
     }
   };
 
   return (
     <div className="edit-recipe-container">
-      <body>
-      <div className="body-overlay"></div> {/* Overlay added here */}
+      <div className="body-overlay"></div>
       <h1>{isEditing ? 'Edit Recipe' : 'Create Recipe'}</h1>
       <div className="form-container">
         <input
@@ -120,7 +103,9 @@ const EditRecipe = () => {
           onChange={handleChange}
           placeholder="Recipe Title"
           className="input-field"
+          required
         />
+
         <textarea
           name="description"
           value={recipe.description}
@@ -128,6 +113,7 @@ const EditRecipe = () => {
           placeholder="Recipe Description"
           className="input-field"
         ></textarea>
+
         <input
           type="text"
           name="imageUrl"
@@ -136,6 +122,7 @@ const EditRecipe = () => {
           placeholder="Image URL"
           className="input-field"
         />
+
         <select
           name="difficulty"
           value={recipe.difficulty}
@@ -146,20 +133,36 @@ const EditRecipe = () => {
           <option value="Medium">Medium</option>
           <option value="Hard">Hard</option>
         </select>
+
         <textarea
           name="ingredients"
-          value={Array.isArray(recipe.ingredients) ? recipe.ingredients.join(', ') : recipe.ingredients}
-          onChange={(e) =>
-            handleChange({
-              target: {
-                name: 'ingredients',
-                value: e.target.value,
-              },
-            })
+          value={
+            Array.isArray(recipe.ingredients)
+              ? recipe.ingredients.join(', ')
+              : recipe.ingredients
           }
+          onChange={(e) => handleChange({
+            target: { name: 'ingredients', value: e.target.value }
+          })}
           placeholder="Ingredients (comma-separated)"
           className="input-field"
-        ></textarea>
+        />
+
+        {/* Steps if needed */}
+        <textarea
+          name="steps"
+          value={
+            Array.isArray(recipe.steps)
+              ? recipe.steps.join('\n')
+              : recipe.steps
+          }
+          onChange={(e) => handleChange({
+            target: { name: 'steps', value: e.target.value.split('\n') }
+          })}
+          placeholder="Preparation Steps (one per line)"
+          className="input-field"
+        />
+
         <div>
           <label htmlFor="tags"><strong>Tags:</strong></label>
           <CreatableSelect
@@ -172,11 +175,11 @@ const EditRecipe = () => {
             placeholder="Select or create tags..."
           />
         </div>
+
         <button onClick={handleSave} className="save-btn">
           {isEditing ? 'Save Changes' : 'Create Recipe'}
         </button>
-        </div>
-        </body>
+      </div>
     </div>
   );
 };
