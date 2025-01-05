@@ -1,17 +1,17 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
-import './style/featuredRecipe.css'; // Add CSS for styling hover effects
+import { useNavigate } from 'react-router-dom'; 
+import './style/featuredRecipe.css'; 
 import axios from 'axios';
 
 const FeaturedRecipe = ({ recipe, onDelete }) => {
-  const navigate = useNavigate(); // Use useNavigate for navigation in React Router v6
+  const navigate = useNavigate(); 
 
   // Handle Delete action
   const handleDelete = () => {
     axios
       .delete(`http://localhost:3000/recipes/${recipe.id}`)
       .then(() => {
-        onDelete(recipe.id); // Notify parent to remove the recipe from the list
+        onDelete(recipe.id); 
       })
       .catch((error) => {
         console.error('Error deleting recipe:', error);
@@ -20,7 +20,7 @@ const FeaturedRecipe = ({ recipe, onDelete }) => {
 
   // Redirect to the edit page when user clicks "Edit"
   const handleEditClick = () => {
-    navigate(`/recipes/edit/${recipe.id}`); // Use navigate() for redirection
+    navigate(`/recipes/edit/${recipe.id}`); 
   };
 
   return (

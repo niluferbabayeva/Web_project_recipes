@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // For navigation to Contact Page
-import './style/Header.css'; // For the header-specific styles
+import { Link } from 'react-router-dom'; 
+import './style/Header.css'; 
 
 const Header = () => {
   const scrollToFeaturedRecipes = () => {

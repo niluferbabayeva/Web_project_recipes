@@ -25,7 +25,7 @@
       "tags": [
         "Vegetarian"
       ],
-      "order": 7
+      "order": 6
     },
     {
       "id": "2637",
@@ -53,7 +53,7 @@
         "Vegan",
         "Healthy"
       ],
-      "order": 2
+      "order": 8
     },
     {
       "id": "2639",
@@ -67,7 +67,7 @@
         "Vegan",
         "Healthy"
       ],
-      "order": 5
+      "order": 4
     },
     {
       "id": "2640",
@@ -80,7 +80,7 @@
       "tags": [
         "Non-Vegetarian"
       ],
-      "order": 4
+      "order": 2
     },
     {
       "id": "2641",
@@ -106,7 +106,7 @@
       "tags": [
         "Non-Vegetarian"
       ],
-      "order": 1
+      "order": 3
     },
     {
       "id": "2643",
@@ -133,7 +133,7 @@
       "tags": [
         "Vegetarian"
       ],
-      "order": 3
+      "order": 1
     },
     {
       "id": "2645",
@@ -160,7 +160,7 @@
         "Vegetarian",
         "Non-Vegetarian"
       ],
-      "order": 6
+      "order": 5
     },
     {
       "id": "2647",
@@ -201,7 +201,7 @@
         "Vegetarian",
         "Healthy"
       ],
-      "order": 8
+      "order": 7
     },
     {
       "id": "2650",
@@ -690,6 +690,12 @@
       "name": "Rahima Karimova",
       "email": "edib.kerimov@gmail.com",
       "message": "hello"
+    },
+    {
+      "id": "f18b",
+      "name": "ndasj",
+      "email": "dsn@gmail.com",
+      "message": "smd"
     }
   ]
 }
