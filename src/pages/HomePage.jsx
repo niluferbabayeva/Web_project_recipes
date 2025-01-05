@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import FeaturedRecipe from '../components/FeaturedRecipe'; // Adjusted path to FeaturedRecipe.jsx
-import ProjectCard from '../components/ProjectCard'; // Adjusted path to ProjectCard.jsx
+import FeaturedRecipe from '../components/FeaturedRecipe'; 
+import ProjectCard from '../components/ProjectCard'; 
 import './style/HomePage.css';
-import Header from '../components/Header'; // Adjusted path to Header.jsx
+import Header from '../components/Header'; 
 import { profilesData } from '../projectData';
 
 

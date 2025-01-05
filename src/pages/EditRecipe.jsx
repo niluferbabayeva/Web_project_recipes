@@ -8,9 +8,7 @@ const EditRecipe = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const isEditing = !!id;
-
-  // If you want separate date fields, e.g. createdAt vs updatedAt:
-  // But for simplicity, we'll keep using "date" as in your code
+ 
   const [recipe, setRecipe] = useState({
     title: '',
     description: '',
