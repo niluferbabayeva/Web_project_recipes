@@ -1,70 +1,117 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Recipe Management App
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+This is a Recipe Management web application built using **React** for the front end and **JSON-Server** for the back end. It allows users to create, edit, delete, view, and manage recipes. Additional functionalities include drag-and-drop reordering, search and filtering, pagination or infinite scrolling, and a contact form.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **CRUD Operations**:
+   - Create, read, update, and delete recipes.
+   - Recipes include fields such as title, description, image URL, ingredients, preparation steps, tags, difficulty, and last updated date.
 
-### `npm test`
+2. **Search and Filter**:
+   - Search recipes by title, description, or ingredients.
+   - Filter recipes by tags and difficulty.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Pagination or Infinite Scrolling**:
+   - Users can toggle between pagination and infinite scrolling for navigating recipes.
 
-### `npm run build`
+4. **Drag-and-Drop Reordering**:
+   - Recipes can be reordered via drag-and-drop. The new order is persisted to the JSON-Server.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. **Share Recipes**:
+   - Users can select recipes and share them via email using EmailJS.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+6. **Contact Form**:
+   - A contact form to collect messages, stored in JSON-Server.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Installation and Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/niluferbabayeva/Web_project_recipes.git
+   cd Web_project_recipes
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. **Run JSON-Server**:
+4. 
+   - Start the server:
+     ```bash
+     json-server --watch db.json --port 3000
+     ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. **Run the React App**:
+   ```bash
+   npm start
+   ```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Key Functionalities
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Create / Edit Recipes
+- Users can create a new recipe or edit an existing one through a form.
+- Form fields include:
+  - Title, description, image URL, ingredients, preparation steps, tags, difficulty.
+- Data is saved to JSON-Server via **POST** or **PUT** requests.
 
-### Code Splitting
+### Search and Filter
+- Search by:
+  - Recipe title, description, or ingredients.
+- Filter by:
+  - Tags and difficulty levels.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Pagination and Infinite Scrolling
+- Toggle between the two modes:
+  - **Pagination**: Recipes are displayed in pages.
+  - **Infinite Scrolling**: Recipes load dynamically as the user scrolls.
 
-### Analyzing the Bundle Size
+### Drag-and-Drop Reordering
+- Recipes can be reordered via drag-and-drop using `react-beautiful-dnd`.
+- Changes are persisted to the server.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Share Recipes
+- Select recipes via checkboxes and share their details via email using EmailJS.
 
-### Making a Progressive Web App
+### Contact Form
+- Users can submit their name, email, and message. Messages are saved in JSON-Server.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## JSON-Server Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. **Recipes**:
+   - `GET /recipes` - Retrieve all recipes.
+   - `POST /recipes` - Create a new recipe.
+   - `PUT /recipes/:id` - Update an existing recipe.
+   - `DELETE /recipes/:id` - Delete a recipe.
 
-### Deployment
+2. **Messages**:
+   - `POST /messages` - Save contact form messages.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **React**: Front-end library.
+- **JSON-Server**: Simple REST API for back end.
+- **Axios**: For HTTP requests.
+- **React Beautiful DnD**: For drag-and-drop functionality.
+- **EmailJS**: For email sharing.
+
+---
+
+## Contact
+
+For any issues or questions, please reach out via the contact form or open an issue in the repository.
