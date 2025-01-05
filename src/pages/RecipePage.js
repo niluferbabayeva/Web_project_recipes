@@ -25,7 +25,7 @@ const RecipePage = () => {
     return <div className="loading">Loading recipe...</div>;
   }
 
-  // Ensure ingredients is an array
+  
   const ingredients = typeof recipe.ingredients === 'string'
     ? recipe.ingredients.split(',').map((ingredient) => ingredient.trim())
     : recipe.ingredients;

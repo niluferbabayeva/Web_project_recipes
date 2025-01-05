@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import RecipePage from './pages/RecipePage';
-import RecipeListPage from './pages/RecipeListPage'; // For full list of recipes
+import RecipeListPage from './pages/RecipeListPage'; 
 import EditRecipe from './pages/EditRecipe';
-import ContactPage from './pages/ContactPage'; // Import the ContactPage component
+import ContactPage from './pages/ContactPage'; 
 
 function App() {
   return (

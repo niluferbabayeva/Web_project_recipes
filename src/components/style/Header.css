@@ -74,22 +74,22 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
-  background: linear-gradient(90deg, #ff5722, #ff8a50); /* Same gradient as Get Started */
+  background: linear-gradient(90deg, #ff5722, #ff8a50); 
   border: none;
   border-radius: 7px;
   cursor: pointer;
-  text-decoration: none; /* Ensure it looks like a button */
+  text-decoration: none; 
   transition: all 0.3s ease-in-out;
 }
 
 .contact-button:hover {
-  background: linear-gradient(90deg, #e64a19, #ff7043); /* Same hover gradient */
+  background: linear-gradient(90deg, #e64a19, #ff7043); 
   transform: translateY(-3px);
 }
 
 .contact-button:active {
   transform: translateY(1px);
-  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.4); /* Same shadow as Get Started */
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.4); 
 }
 
 
