@@ -67,7 +67,7 @@
         "Vegan",
         "Healthy"
       ],
-      "order": 4
+      "order": 3
     },
     {
       "id": "2640",
@@ -80,7 +80,7 @@
       "tags": [
         "Non-Vegetarian"
       ],
-      "order": 2
+      "order": 5
     },
     {
       "id": "2641",
@@ -106,7 +106,7 @@
       "tags": [
         "Non-Vegetarian"
       ],
-      "order": 3
+      "order": 2
     },
     {
       "id": "2643",
@@ -160,7 +160,7 @@
         "Vegetarian",
         "Non-Vegetarian"
       ],
-      "order": 5
+      "order": 4
     },
     {
       "id": "2647",
